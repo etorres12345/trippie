@@ -3,7 +3,7 @@ const axios = require("axios");
 const Trip = require("../models/Trip.model");
 const { isAuthenticated } = require("../middleware/jwt.middleware.js");
 
-router.post("/trips", (req, res, next) => {
+router.post("/trips", isAuthenticated, (req, res, next) => {
   const { city, userId } = req.body;
 
   Trip.create({ city, user: userId, places: [] })
