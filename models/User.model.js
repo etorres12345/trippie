@@ -17,6 +17,9 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Name is required."],
     },
+    trips: {
+      type: [{ type: Schema.Types.ObjectId, ref: "Trip" }],
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

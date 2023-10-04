@@ -6,14 +6,12 @@ const tripSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+    title: {
+      type: String,
+      required: [true, "Title is requred"],
+    },
     city: String,
-    places: [
-      {
-        _id: false,
-        name: String,
-        category: String,
-      },
-    ],
+    places: [],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
