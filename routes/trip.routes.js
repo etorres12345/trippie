@@ -93,13 +93,20 @@ router.post(
   async (req, res, next) => {
     const tripId = req.params.tripId;
     const { restaurantData } = req.body;
-    console.log(
-      "This is the Trip ID:====",
-      tripId,
-      "This is the Rest Data:=====",
-      restaurantData
-    );
+    console.log("triggered");
+
+    // console.log(
+    //   "This is the Trip ID:====",
+    //   tripId,
+    //   "This is the Rest Data:=====",
+    //   restaurantData
+    // );
     try {
+      // const foundTrip = await Trip.findById(tripId);
+      // console.log(foundTrip.places);
+      //   for (let value of foundTrip.places) {
+      //     console.log(value);
+      //   }
       const updatedTrip = await Trip.findByIdAndUpdate(
         tripId,
         {
